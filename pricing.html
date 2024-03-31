@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockSquat Pricing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        .pricing-header {
+            text-align: center;
+            padding: 2rem;
+        }
+        .pricing-plans {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .plan {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 2rem;
+            margin: 0 1rem;
+            width: 20%;
+            background: #ffffff;
+        }
+        .plan.highlight {
+            border-color: #007bff;
+            background: #e7f1ff;
+        }
+        .plan-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .plan-price {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .plan-feature {
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+        .plan-action {
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            background: #007bff;
+            color: #ffffff;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .plan-action:hover {
+            background: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .footer p {
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 960px) {
+            .pricing-plans {
+                flex-direction: column;
+            }
+            .plan {
+                width: 80%;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pricing-header">
+            <h1>Choose a plan</h1>
+            <p>Give your team the features they need to succeed.</p>
+        </div>
+        
+        <div class="pricing-plans">
+            <!-- Basic Protection -->
+            <div class="plan">
+                <h2 class="plan-title">Basic Protection</h2>
+                <p class="plan-price">$19/mo</p>
+                <p class="plan-feature">24/7 Surveillance</p>
+                <p class="plan-feature">Alert System</p>
+                <a href="#" class="plan-action">Choose Basic</a>
+            </div>
+
+            <!-- Standard Protection -->
+            <div class="plan highlight">
+                <h2 class="plan-title">Standard Protection</h2>
+                <p class="plan-price">$39/mo</p>
+                <p class="plan-feature">Legal Consultation</p>
+                <p class="plan-feature">Enhanced Monitoring</p>
+                <a href="#" class="plan-action">Choose Standard</a>
+            </div>
+
+            <!-- Premium Protection -->
+            <div class="plan">
+                <h2 class="plan-title">Premium Protection</h2>
+                <p class="plan-price">$59/mo</p>
+                <p class="plan-feature">On-Site Intervention</p>
+                <p class="plan-feature">Full Eviction Support</p>
+                <a href="#" class="plan-action">Choose Premium</a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="plan">
+                <h2 class="plan-title">Enterprise</h2>
+                <p class="plan-feature">Custom solutions for property managers</p>
+                <a href="tel:123-456-7890" class="plan-action">Call Us</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>* Plus applicable taxes</p>
+            <p>Save 10% with annual billing</p>
+        </div>
+    </div>
+</body>
+</html>
