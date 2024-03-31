@@ -69,58 +69,67 @@
         .footer p {
             font-size: 0.9rem;
         }
-                        /* Modal styles */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
+            display: none;
+            position: fixed;
+            z-index: 1;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            padding-top: 60px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            align-items: center;
+            justify-content: center;
+            display: flex;
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 5% auto; /* 5% from the top and centered */
-            padding: 20px;
+            margin: auto; /* Center in viewport */
+            padding: 40px; /* Increased padding */
             border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            max-width: 500px; /* Maximum width */
+            width: 80%;
+            max-width: 450px; /* Adjusted max width for better appearance */
+            border-radius: 10px; /* Rounded corners for the modal */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+            position: relative;
         }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* The Close Button in Modal */
         .close-button {
-            color: #aaaaaa;
-            float: right;
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
             font-size: 28px;
             font-weight: bold;
         }
 
         .close-button:hover,
         .close-button:focus {
-            color: #000;
+            color: black;
             text-decoration: none;
             cursor: pointer;
         }
+
+        .modal h1,
+        .modal h2 {
+            margin-bottom: 20px; /* Added spacing */
+        }
+
+        .modal .plan-action {
+            background: #007bff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px; /* Larger font size for button */
+            border-radius: 5px; /* Rounded corners for button */
+            color: white;
+            text-align: center;
+            display: block; /* Center the button */
+            margin: auto;
+            margin-top: 20px; /* Space from the last text */
+        }
+
         /* Responsive */
         @media (max-width: 960px) {
             .pricing-plans {
@@ -130,6 +139,11 @@
                 width: 80%;
                 margin-bottom: 2rem;
             }
+            .modal-content {
+                width: 95%;
+                padding: 20px; /* Less padding on smaller screens */
+            }
+        }
         }
     </style>
 </head>
@@ -193,20 +207,32 @@
     </div>
     </div>
     </div>
-     <script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>This service is not yet available in your region</h1>
+            <h2>Sign up to be informed first</h2>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqGt390qLj_OhME4N06ZoiUMYt6566iVtl75sMKFXDQA0WYQ/viewform?usp=sf_link" class="plan-action">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
         // Get the modal
         var modal = document.getElementById('myModal');
 
-        // Get the button that opens the modal
+        // Get the buttons that open the modal
         var btns = document.querySelectorAll('.plan-action');
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close-button")[0];
 
-        // When the user clicks on any plan button, open the modal 
+        // When the user clicks on the button, open the modal
         btns.forEach(function(btn) {
-            btn.onclick = function() {
-                modal.style.display = "block";
+            btn.onclick = function(e) {
+                e.preventDefault();
+                modal.style.display = "flex";
             }
         });
 
@@ -217,7 +243,7 @@
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
         }
