@@ -11,24 +11,25 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding-top: 50px; /* Adjusted padding to push content down */
+            padding-top: 50px; /* Push content down */
         }
         .navbar {
             display: flex;
-            justify-content: flex-end;
-            padding: 0 10px;
+            justify-content: space-between; /* Adjusted for spacing */
+            align-items: center; /* Align items vertically */
+            padding: 0 20px; /* Adjusted padding for spacing */
             background-color: #333;
-            position: fixed; /* Fixed at the top */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 40px; /* Reduced height */
+            height: 60px; /* Increased height for better tap targets */
         }
         .navbar a {
             color: white;
             text-decoration: none;
             padding: 8px 15px;
-            font-size: 14px; /* Smaller font size */
+            font-size: 14px;
         }
         .navbar a:hover {
             background-color: #ddd;
@@ -41,19 +42,20 @@
             padding: 0 20px;
         }
         .hero-image {
-            max-width: 100%;
-            max-height: 30em;
+            width: 100%; /* Make image responsive */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 8px;
-            margin-bottom: 20px; /* Added space between image and text */
+            margin-bottom: 20px;
         }
-        h1 {
-            font-size: 32px; /* Adjusted size for better readability */
+        h1, h2 {
             color: #333;
             margin: 0 0 10px;
         }
+        h1 {
+            font-size: 32px;
+        }
         h2 {
-            font-size: 24px; /* Adjusted size for better readability */
-            color: #333;
+            font-size: 24px;
             margin: 0 0 20px;
         }
         .signup-button {
@@ -65,8 +67,9 @@
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
-            margin-top: 20px; /* Ensure it's above the fold */
+            display: block; /* Changed to block to allow width manipulation */
+            margin: 20px auto; /* Center button */
+            width: auto; /* Adjust width */
         }
         .signup-button:hover {
             background-color: #0056b3;
@@ -74,12 +77,13 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             .navbar {
+                flex-direction: column; /* Stack navbar items */
                 height: auto;
                 padding: 10px;
             }
             .navbar a {
-                font-size: 12px;
-                padding: 8px 10px;
+                display: block; /* Stack links */
+                margin-bottom: 10px; /* Add space between links */
             }
             h1 {
                 font-size: 24px;
@@ -88,8 +92,7 @@
                 font-size: 20px;
             }
             .signup-button {
-                width: 100%;
-                box-sizing: border-box;
+                padding: 15px 25px; /* Bigger tap target */
             }
         }
     </style>
